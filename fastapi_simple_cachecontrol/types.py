@@ -1,8 +1,8 @@
 from dataclasses import dataclass
-from typing import ClassVar, Dict, Literal
+from typing import ClassVar, Dict
 
 
-CACHEABILITY_DIRECTIVE = Literal["public", "private", "no-cache", "no-store"]
+CACHEABILITY_DIRECTIVE = str
 """Header directive for cacheablity.
 """
 
