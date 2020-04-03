@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import ClassVar, Literal
+from typing import ClassVar, Dict, Literal
 
 
 CACHEABILITY_DIRECTIVE = Literal["public", "private", "no-cache", "no-store"]
@@ -32,3 +32,7 @@ class CacheControl:
         if self.s_maxage:
             value += f", s-maxage={self.s_maxage}"
         return value
+
+    @property
+    def header_dict(self) -> Dict[str, str]:
+        return {self.HEADER_NAME: self.header_value}

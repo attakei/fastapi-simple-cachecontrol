@@ -34,7 +34,7 @@ Adding header for all request
    from fastapi_simple_cachecontrol.middleware import CacheControlMiddleware
 
    app = FastAPI()
-   app.add_middleware(CacheControlMiddleware, header=CacheControl("public"))
+   app.add_middleware(CacheControlMiddleware, cache_control=CacheControl("public"))
 
 Specs
 =====
