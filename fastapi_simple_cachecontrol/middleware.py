@@ -14,6 +14,7 @@ class CacheControlMiddleware(BaseHTTPMiddleware):
     """Set Cache-Control header for any GET and HEAD requests.
     If header is set already by route handler or other middleware, not set by it.
     """
+
     def __init__(self, app: ASGIApp, cache_control: CacheControl):
         """
         :param cache_control: Setting Cache-Control object.
