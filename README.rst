@@ -12,7 +12,14 @@ Provide middleware to control Cache-Control header.
 Installation
 ============
 
-(now writing)
+This package is not registered in PyPI. Wheel is stored in GitHub Releases.
+
+.. code-block: sh
+
+   # Using pip
+   pip install https://github.com/attakei/fastapi-simple-cachecontrol/releases/download/v0.1.0/fastapi_simple_cachecontrol-0.1.0-py3-none-any.whl
+   # Using poetry
+   poetry add https://github.com/attakei/fastapi-simple-cachecontrol/releases/download/v0.1.0/fastapi_simple_cachecontrol-0.1.0-py3-none-any.whl
 
 Usage
 =====
