@@ -10,12 +10,6 @@
       "problemMatcher": []
     },
     {
-      "label": "server",
-      "type": "shell",
-      "command": "poetry run python -m fastapi_simple_cachecontrol -D",
-      "problemMatcher": []
-    },
-    {
       "label": "docs",
       "type": "shell",
       "command": "poetry run make -C docs html"
