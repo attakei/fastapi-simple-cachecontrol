@@ -29,6 +29,14 @@ Adding header for all request
    app = FastAPI()
    app.add_middleware(CacheControlMiddleware, header=CacheControl("public"))
 
+Specs
+=====
+
+* You can select only one of cacheability directives.
+
+  * Supporting ``public``, ``private``, ``no-cache`` and ``no-store``
+
+* Expires directives are used as value if only used ``public`` or ``private``.
 
 Refs
 ====
