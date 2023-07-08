@@ -14,8 +14,8 @@ dependencies = ["fastapi"]
 
 [project.optional-dependencies]
 test = [
-  "pytest ==5.3.*",
-  "requests",
+  "httpx",
+  "pytest",
 ]
 
 [project.urls]
