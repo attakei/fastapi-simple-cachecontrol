@@ -3,6 +3,32 @@ import pytest
 from fastapi_simple_cachecontrol import types
 
 
+class TestForResponseDerectives:
+    def test_only_single_flag(self):
+        d = types.ResponseDirectives(no_store=True)
+        assert d.field_value == "no-store"
+
+    def test_only_single_delta(self):
+        d = types.ResponseDirectives(max_age=60)
+        assert d.field_value == "max-age=60"
+
+    def test_multi_flag_props(self):
+        d = types.ResponseDirectives(no_store=True, no_transform=True)
+        assert d.field_value == "no-store, no-transform"
+
+    def test_multi_delta_props(self):
+        d = types.ResponseDirectives(max_age=60, s_maxage=600)
+        assert d.field_value == "max-age=60, s-maxage=600"
+
+    def test_delta_with_flag(self):
+        d = types.ResponseDirectives(public=True, max_age=600)
+        assert d.field_value == "max-age=600, public"
+
+    def test_validate_no_directive(self):
+        with pytest.raises(ValueError):
+            types.ResponseDirectives()
+
+
 @pytest.mark.parametrize(
     "cacheability,max_age,s_maxage,expected",
     [
