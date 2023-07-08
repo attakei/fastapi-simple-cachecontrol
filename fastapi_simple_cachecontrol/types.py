@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from typing import ClassVar, Dict
 
-
 CACHEABILITY_DIRECTIVE = str
 """Header directive for cacheablity.
 """

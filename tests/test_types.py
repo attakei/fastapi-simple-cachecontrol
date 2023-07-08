@@ -1,4 +1,5 @@
 import pytest
+
 from fastapi_simple_cachecontrol import types
 
 
