@@ -5,8 +5,6 @@ CACHEABILITY_DIRECTIVE = str
 """Header directive for cacheablity.
 """
 
-HEADER_NAME = "Cache-Control"
-
 
 @dataclass
 class ResponseDirectives:

@@ -2,6 +2,7 @@ from fastapi import FastAPI, Response
 from fastapi.testclient import TestClient
 
 from fastapi_simple_cachecontrol import middleware, types
+from fastapi_simple_cachecontrol.consts import HEADER_NAME
 
 
 def test_simple_usage():
@@ -26,7 +27,7 @@ def test_ignore_already_header():
     @app.get("/")
     def _():
         response = Response()
-        response.headers.update({types.HEADER_NAME: "private"})
+        response.headers.update({HEADER_NAME: "private"})
         return response
 
     response = TestClient(app).get("/")
@@ -54,7 +55,7 @@ def test_ignore_already_header_old():
     @app.get("/")
     def _():
         response = Response()
-        response.headers.update({types.HEADER_NAME: "private"})
+        response.headers.update({HEADER_NAME: "private"})
         return response
 
     response = TestClient(app).get("/")

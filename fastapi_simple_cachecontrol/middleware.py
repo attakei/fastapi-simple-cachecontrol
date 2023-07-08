@@ -6,7 +6,8 @@ from fastapi import Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
 from starlette.types import ASGIApp
 
-from .types import HEADER_NAME, CacheControl, ResponseDirectives
+from .consts import HEADER_NAME
+from .types import CacheControl, ResponseDirectives
 
 CACHEABLE_METHODS = ["GET", "HEAD"]
 
