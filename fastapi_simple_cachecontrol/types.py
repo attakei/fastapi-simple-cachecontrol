@@ -1,9 +1,11 @@
 from dataclasses import asdict, dataclass
-from typing import ClassVar, Dict, Optional, Union
+from typing import Optional, Union
 
 CACHEABILITY_DIRECTIVE = str
 """Header directive for cacheablity.
 """
+
+HEADER_NAME = "Cache-Control"
 
 
 @dataclass
@@ -65,8 +67,6 @@ class ResponseDirectives:
 
 @dataclass
 class CacheControl:
-    HEADER_NAME: ClassVar[str] = "Cache-Control"
-
     cacheablity: CACHEABILITY_DIRECTIVE
     """Cacheability directive(must select one of ``CACHEABILITY_DIRECTIVE``).
     """
@@ -88,7 +88,3 @@ class CacheControl:
         if self.s_maxage:
             value += f", s-maxage={self.s_maxage}"
         return value
-
-    @property
-    def header_dict(self) -> Dict[str, str]:
-        return {self.HEADER_NAME: self.header_value}
